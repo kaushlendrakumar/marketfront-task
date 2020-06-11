@@ -1,0 +1,31 @@
+.projects-conatiner{
+    padding: 64px 0px 0px 0px;
+    .projects-row{
+        margin: 0px;
+        .title-1{
+            font-size: 24px;
+            padding: 6px 0px;
+        }
+        // start projects-col
+        .projects-col{
+            padding: 8px 12px;
+            .project-card{
+                .card-body{
+                    page-break-after: auto;
+                    ul{
+                        margin-bottom: 6px;
+                        li{
+                            padding: 8px 6px;
+                            color: rgba(102,102,102,0.8);
+                            .card-title{
+                                margin-bottom: 0px;
+                                color: #000000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // end projects-col
+    }
+}

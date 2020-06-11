@@ -1,0 +1,120 @@
+<div class="container-fluid payment-conatiner">
+    <div class="row payment-row">
+        <div class="offset-md-1 col-md-10 col-12 payment-col">
+            <div class="row header-row">
+                <div class="col-12 col-md-6 title-1">Payment</div>
+                <div class="col-12 col-md-6 title-1 text-right">₹ 
+                    {{paymentDetails?.appDetails?.selectedPlot?.total | number : '.2-2'}}
+                </div>
+            </div>
+        </div>
+        <div class="offset-md-1 col-md-10 col-12 payment-col">
+            <form  #bookingForm="ngForm">
+                <div class="row form-row">
+                    <div class="col-12 form-col title-1">Shipping Details</div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">Name</label>
+                            <input type="text" class="form-control"
+                                required [(ngModel)]="paymentDetails.appDetails.shippingDetails.name" 
+                                name="paymentDetails?.appDetails?.shippingDetails?.name">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">Email</label>
+                            <input type="email" class="form-control"
+                            required [(ngModel)]="paymentDetails.appDetails.shippingDetails.email" 
+                            name="paymentDetails?.appDetails?.shippingDetails?.email">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">Address</label>
+                            <input type="text" class="form-control"
+                            required [(ngModel)]="paymentDetails.appDetails.shippingDetails.address" 
+                            name="paymentDetails?.appDetails?.shippingDetails?.address">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">City</label>
+                            <input type="text" class="form-control"
+                            required [(ngModel)]="paymentDetails.appDetails.shippingDetails.city" 
+                            name="paymentDetails?.appDetails?.shippingDetails?.city">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">Pincode</label>
+                            <input type="number" class="form-control"
+                            required [(ngModel)]="paymentDetails.appDetails.shippingDetails.pin" 
+                            name="paymentDetails?.appDetails?.shippingDetails?.pin">
+                        </div>
+                    </div>
+                    <div class="col-12 form-col title-1">Payment Methods</div>
+                    <div class="col-12 form-col pt-10">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paymentOption" id="card" value="card"
+                            required [(ngModel)]="paymentDetails.appDetails.paymentDetails.cardMethod" 
+                            name="paymentDetails?.appDetails?.paymentDetails?.cardMethod">
+                            <label class="form-check-label" for="card">Card</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paymentOption" id="netBanking" value="Net Banking"
+                            required [(ngModel)]="paymentDetails.appDetails.paymentDetails.cardMethod" 
+                            name="paymentDetails?.appDetails?.paymentDetails?.cardMethod">
+                            <label class="form-check-label" for="netBanking">Net Banking</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="paymentOption" id="upi" value="UPI"
+                            required [(ngModel)]="paymentDetails.appDetails.paymentDetails.cardMethod" 
+                            name="paymentDetails?.appDetails?.paymentDetails?.cardMethod">
+                            <label class="form-check-label" for="upi">UPI</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-row card-payment-row"
+                    *ngIf="paymentDetails?.appDetails?.paymentDetails?.cardMethod != 'card'">
+                    <div class="col-12 mt-2">                        
+                        <strong>
+                            {{paymentDetails?.appDetails?.paymentDetails?.cardMethod}}
+                        </strong>
+                         service is not available 
+                        <div><strong>Currently we are supporing only Card.</strong></div>
+                    </div>
+                </div>
+                <div class="row form-row card-payment-row"
+                    *ngIf="paymentDetails?.appDetails?.paymentDetails?.cardMethod === 'card'">
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">Card Holder Name</label>
+                            <input type="text" class="form-control"
+                            required [(ngModel)]="paymentDetails.appDetails.paymentDetails.cardHolderName" 
+                            name="paymentDetails?.appDetails?.paymentDetails?.cardHolderName">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">Card Number</label>
+                            <input type="text" class="form-control"
+                            required [(ngModel)]="paymentDetails.appDetails.paymentDetails.cardNumber" 
+                            name="paymentDetails?.appDetails?.paymentDetails?.cardNumber">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">EXP</label>
+                            <input type="text" class="form-control" placeholder="MM/YYYY"
+                            required [(ngModel)]="paymentDetails.appDetails.paymentDetails.exp" 
+                            name="paymentDetails?.appDetails?.paymentDetails?.exp">
+                        </div>
+                    </div>
+                    <div class="col-12 form-col">
+                        <button (click)="otpPage()" type="submit" [disabled]="bookingForm.invalid" class="btn btn-primary">Pay Now</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

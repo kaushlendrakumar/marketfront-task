@@ -1,0 +1,29 @@
+<div class="container-fluid payment-conatiner">
+    <div class="row payment-row">
+        <div class="offset-md-1 col-md-10 col-12 payment-col">
+            <div class="row header-row">
+                <div class="col-12 col-md-6 title-1">Payment - OTP</div>
+                <div class="col-12 col-md-6 title-1 text-right">₹ 
+                    {{paymentDetails?.appDetails?.selectedPlot?.total | number : '.2-2'}}</div>
+            </div>
+        </div>
+        <div class="offset-md-1 col-md-10 col-12 payment-col">
+            <form #otpForm="ngForm">
+                <div class="row form-row">
+                    <div class="col-12">One Time Password(OTP) has been sent to your registered mobile number.</div>
+                    <div class="col-12 col-md-6 form-col">
+                        <div class="form-group">
+                            <label class="label">OTP</label>
+                            <input type="text" class="form-control" placeholder="Enter one time password"
+                            required [(ngModel)]="otp" 
+                            name="otp">
+                        </div>
+                    </div>
+                    <div class="col-12 form-col">
+                        <button (click)="successPage()" [disabled]="!otpForm.valid || otp != '6789'"  class="btn btn-primary">Pay Now</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

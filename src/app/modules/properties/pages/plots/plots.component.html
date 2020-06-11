@@ -1,0 +1,51 @@
+<div class="container-fluid plots-conatiner">
+    <div class="row plots-row">
+        <div class="offset-md-1 col-md-10 col-12 plots-col">
+            <p class="title-1">{{plotsPageDetails?.appDetails?.selectedProject?.projectName}} / Plots</p>
+            <div 
+                *ngFor="let plot of plotsPageDetails?.appDetails?.selectedProject?.plotList"
+                class="row plot-card-row">
+                <div class="col-12 plot-card-col">
+                    <div class="d-flex flex-row align-items-stretch plot-row">
+                        <div class="left-col">
+                            <img [src]="plot.plotImg" alt="img">
+                        </div>
+                        <div class="right-col">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="lable">Plot Name</div>
+                                    <div class="value">{{plot?.plotName}}</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="lable">Unit</div>
+                                    <div class="value">{{plot?.unit}}</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="lable">Area</div>
+                                    <div class="value">{{plot?.area}}</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="lable">Price</div>
+                                    <div class="value">₹  {{plot?.price}} {{plot?.priceUnit}}</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="lable">Property Type</div>
+                                    <div class="value">{{plot?.propertyType}}</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="lable">Launched Date</div>
+                                    <div class="value">{{plot?.launchedDate}}</div>
+                                </div>
+                                <div class="col-12 action-col">
+                                    <button (click)="detailsPage(plot)"
+                                        [disabled]="!plot?.isAvailable" class="btn btn-primary">View Details</button>
+                                    <span class="ml-2" *ngIf="!plot?.isAvailable">(This plot is not available.)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

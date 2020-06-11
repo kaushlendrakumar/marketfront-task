@@ -1,0 +1,39 @@
+<div class="container-fluid projects-conatiner">
+    <div class="row projects-row">
+        <div class="offset-md-1 col-md-10 col-12 projects-col">
+            <p class="title-1">Projects</p>
+            <div class="row">
+                <div class="col-12 col-md-4"
+                    *ngFor="let project of projectsDetails?.appDetails.itemList;">
+                    <div class="card project-card">
+                        <img class="card-img-top" [src]="project?.projectImg" alt="Card image cap">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="card-title">{{project.projectName}}</div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="project-location"> 
+                                        <span class="location-icon"></span> 
+                                        {{project.projectLocation}}
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    Possession starts from: {{project.startDate}}.
+                                </li>
+                                <li class="list-group-item">
+                                    ₹ {{project?.priceRange?.minPrice}} {{project.priceUnit}} - 
+                                    ₹ {{project?.priceRange?.maxPrice}} {{project.priceUnit}}
+
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <button (click)="plotsPage(project)"  class="btn btn-primary view-details-btn w-100" >View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

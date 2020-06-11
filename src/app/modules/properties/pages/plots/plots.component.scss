@@ -1,0 +1,50 @@
+.plots-conatiner{
+    padding: 64px 0px 0px 0px;
+    .plots-row{
+        margin: 0px;
+        .title-1{
+            font-size: 24px;
+            padding: 6px 0px;
+        }
+        // start plots-col
+        .plots-col{
+            padding: 8px 12px;
+            .plot-card-row{
+                padding: 15px;
+                .plot-card-col{
+                    border: 1px solid #cccccc;
+                    padding: 0px;
+                    border-radius: 2px;
+                    overflow: hidden;
+                    .plot-row{
+                        height: 250px;
+                        .left-col{
+                            width: 300px;
+                            height: 250px;
+                            img{
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                        .right-col{
+                            flex: 1;
+                            padding: 15px;
+                            .lable{
+                                font-size: 12px;
+                                color: rgba(102,102,102,0.6);
+                            }
+                            .value{
+                                font-size: 14px;
+                                padding-bottom: 15px;
+                            }
+                            .action-col{
+                                padding-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // end plots-col
+    }
+}

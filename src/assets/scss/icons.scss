@@ -1,0 +1,20 @@
+.brand-logo{
+    background-image: url('../images/marketfront-logo.png');
+    background-size: contain;
+    display: inline-block;
+    height: 54px !important;
+    width: 160px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.location-icon{
+    background-image: url('../images/location.svg');
+    background-size: contain;
+    display: inline-block;
+    height: 16px !important;
+    width: 16px !important;
+    background-repeat: no-repeat;
+    background-position: center 2px;
+}

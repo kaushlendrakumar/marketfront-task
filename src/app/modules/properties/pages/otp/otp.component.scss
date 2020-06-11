@@ -1,0 +1,36 @@
+.payment-conatiner{
+    padding: 64px 0px 0px 0px;
+    .payment-row{
+        margin: 0px;
+        .payment-col{
+            .header-row{
+                margin: 0px;
+                .title-1{
+                    font-size: 24px;
+                    padding: 6px 0px;
+                }
+            }
+            .form-row{
+                .form-col{
+                    &.title-1{
+                        font-size: 16px;
+                        margin-top: 20px;
+                    }
+                    .form-group{
+                        .label{
+                            margin: 0px;
+                            font-size: 12px;
+                            color: rgba(102,102,102);
+                        }
+                    }
+                    &.pt-10{
+                        padding-top: 10px;
+                    }
+                }
+                &.card-payment-row{
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+}

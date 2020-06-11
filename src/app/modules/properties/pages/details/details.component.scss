@@ -1,0 +1,100 @@
+.plots-conatiner{
+    padding: 64px 0px 0px 0px;
+    .plots-row{
+        margin: 0px;
+        .title-1{
+            font-size: 24px;
+            padding: 6px 0px;
+        }
+        // start plots-col
+        .plots-col{
+            padding: 8px 12px;
+            .detail-row{
+                .detail-col{
+                    .plot-card-row{
+                        padding: 15px;
+                        .plot-card-col{
+                            border: 1px solid #cccccc;
+                            padding: 0px;
+                            border-radius: 2px;
+                            overflow: hidden;
+                            .plot-row{
+                                height: 250px;
+                                .left-col{
+                                    width: 300px;
+                                    height: 250px;
+                                    img{
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+                                }
+                                .right-col{
+                                    flex: 1;
+                                    padding: 15px;
+                                    .lable{
+                                        font-size: 12px;
+                                        color: rgba(102,102,102,0.6);
+                                    }
+                                    .value{
+                                        font-size: 14px;
+                                        padding-bottom: 15px;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                    .order-summary-card{
+                        margin-top: 15px;
+                        .card-body{
+                            .card-title-1{
+                                font-weight: bold;
+                            }
+                            .card-title-2{
+                                font-size: 12px;
+                            }
+                            ul{
+                                li{
+                                    text-transform: capitalize;
+                                    &:last-child{
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                            .place-order-btn{
+                                margin: 12px;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .title-1{
+                        font-size: 24px;
+                        font-weight: 600;
+                    }
+                    .amenities-wrapper{
+                        .amenities{
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 150px;
+                            text-align: center;
+                            padding: 12px 0px; 
+                            img{
+                                height: 50px;
+                                width: 50px;
+                                border-radius: 50%;
+                                border: 1px solid rgba(102,102,102,0.6);
+                                padding: 4px;
+                            }
+                            .lable{
+                                padding-top: 6px;
+                                font-size: 12px;
+                                color: rgba(102,102,102,0.6);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // end plots-col
+    }
+}
